@@ -1,0 +1,63 @@
+#login{
+    border-radius: 10px;
+    border: 2px solid deepskyblue;
+    cursor: pointer;
+}
+#login:hover{
+    border: 2px solid blue;
+}
+#login:focus{
+    background-color: #56c6ee;
+}
+
+#password{
+    border-radius: 10px;
+    border: 2px solid deepskyblue;
+    cursor: pointer;
+}
+#password:hover{
+    border: 2px solid blue;
+}
+#password:focus{
+    background-color: #56c6ee;
+}
+
+#loginPassword{
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#loginPassword > li{
+    margin: 10px 0;
+}
+
+#continue{
+    width: 100px;
+    height: 30px;
+
+    border: 0;
+    border-radius: 5px;
+
+    background-color: deepskyblue;
+    color: white;
+    transition: background-color 0.5s ease;
+
+    cursor: pointer;
+}
+
+#continue:hover{
+    background-color: blue;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#logo{
+    width: 200px;
+}
