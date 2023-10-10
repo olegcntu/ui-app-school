@@ -39,7 +39,7 @@
      color: #1A6FB3;
  }
 
- #loginPassword{
+ #login-password{
      margin: 0;
  }
 
@@ -69,13 +69,13 @@
     background-color: #24AABD;
 }
 
-#loginPassword{
+#login-password{
     list-style: none;
     padding: 0;
     text-align: center;
 }
 
-#loginPassword > li{
+#login-password > li{
     margin: 10px 0;
 }
 
