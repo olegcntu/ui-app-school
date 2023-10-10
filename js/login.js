@@ -8,7 +8,6 @@ const Password = 123;
 function isValid(){
     if (login === Login || password === Password){
         continueBtn.addEventListener('click', () => {
-            console.log('assdfsghs')
             window.location.href = 'adminPanel.html'
         })
     }

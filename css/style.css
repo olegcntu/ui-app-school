@@ -1,45 +1,92 @@
-#login{
+ /*login start*/
+ .body{
+     background-image: url("../img/backgroungLoginPagejpg.jpg");
+
+     font-family: 'Black Ops One', cursive;
+     font-family: 'Gabarito', cursive;
+     font-family: 'Kanit', sans-serif;
+     font-family: 'Raleway', sans-serif;
+     font-family: 'Roboto', sans-serif;
+ }
+
+ .container{
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 100vh;
+ }
+
+ #logo{
+     width: 300px;
+ }
+
+ #logoTxt{
+     font-size: x-large;
+
+     margin-top: 0;
+ }
+
+ .color1{
+     color: #F45EAC;
+ }
+
+ .color2{
+     color: #FCD506;
+ }
+
+ .color3{
+     color: #1A6FB3;
+ }
+
+ #login-password{
+     margin: 0;
+ }
+
+ #login{
+     height: 30px;
     border-radius: 10px;
-    border: 2px solid deepskyblue;
+    border: 2px solid #F45EAC;
     cursor: pointer;
 }
 #login:hover{
-    border: 2px solid blue;
+    border: 2px solid #1A6FB3;
 }
 #login:focus{
-    background-color: #56c6ee;
+    background-color: #196CAE;
 }
 
 #password{
+    height: 30px;
     border-radius: 10px;
-    border: 2px solid deepskyblue;
+    border: 2px solid #FCD506;
     cursor: pointer;
 }
 #password:hover{
-    border: 2px solid blue;
+    border: 2px solid #25ABBE;
 }
 #password:focus{
-    background-color: #56c6ee;
+    background-color: #24AABD;
 }
 
-#loginPassword{
+#login-password{
     list-style: none;
     padding: 0;
     text-align: center;
 }
 
-#loginPassword > li{
+#login-password > li{
     margin: 10px 0;
 }
 
 #continue{
-    width: 100px;
-    height: 30px;
+    width: 150px;
+    height: 40px;
 
     border: 0;
     border-radius: 5px;
 
-    background-color: deepskyblue;
+    background-color: #B842EF;
     color: white;
     transition: background-color 0.5s ease;
 
@@ -47,17 +94,17 @@
 }
 
 #continue:hover{
-    background-color: blue;
+    background-color: #E37B9E;
 }
 
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+/*login end*/
 
-#logo{
-    width: 200px;
-}
+/*main page start*/
+ #teachersCard{
+     border: 1px solid black;
+
+     display: flex;
+
+     padding-left: 50px;
+     gap: 20px;
+ }
