@@ -64,7 +64,11 @@ function fetchData() {
                 data.forEach(element => {
                         console.log(element);
                         const teacherBlock = document.createElement("div");
-                        teacherBlock.setAttribute("id", "teachersCard");
+                        teacherBlock.setAttribute("class", "teachersCard");
+                        teacherBlock.setAttribute("id", element.id);
+                        teacherBlock.addEventListener('click', function (){
+                            console.log(element.id)
+                        })
 
 
                         const teacherName = document.createElement("p");
