@@ -5,14 +5,33 @@
     <title>Title</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
+<body class="bodyAdminPanel" id="body-admin-panel">
 
-<div id="teachers-block">
-<!--&lt;!&ndash;    <p id="teacherName"> Name: ,</p>&ndash;&gt;-->
-<!--    <p id="teacherLastNAme"> Last Name: ,</p>-->
-<!--        <p id="teacherHourlySalary"> Hourly Salary: ,</p>-->
-<!--    <p id="teacherWorkTime"> Work Time: </p>-->
+<button id="add-teacher">add teacher</button>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <button class="close" id="close-button">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAA
+                BSklEQVR4nO2WO04DMRCGv0ukIA9ESRGq0BEOEAkizhHyOAsdKIiCkj6PmxAuAAodWbokSmRpVlqtYnvWu4EU+aWRVrZmP894PDYcdYA6BX
+                rAFJgBv2IzGesCtSKBFeAJWAEbj62BN+AsL/QOiBTAtC2Adih0IBFkhSaj74dEus4BTcLVkVcD0+tKe1kDfikQGttQc2Rs1XsFXALzHXNmr
+                AE0Lb4ryaRVPceqzY+N6in4XMaQhdn8713gicMxCYjhu8Zs/iMX+MOzV2mQFrqRDmeVppq/gYuEzznwpfCL9gH+VPj9HGSqJ/9VXN09HqeO
+                C1xzNJCmp4GYuWuL79LXQIyeFYWS1R5RXvyLAqGmmk9QqqV8cWiuxVstNFa/gIeA6f1Bagem3aT3hpwqAQ9SmZooX7PsqUZVudrGwLu010i
+                +R3JOvUfmKP5aW9phkM5mm0cTAAAAAElFTkSuQmCC">
+        </button>
+        <div class="modalInputText">
+            <p>Teacher name:</p>
+            <input placeholder="name" id="name">
+            <p>Teacher last name:</p>
+            <input placeholder="last name" id="last-name">
+            <p>Hourly salary:</p>
+            <input placeholder="hourly salary" type="number" id="hourly-salary">
+            <button id="create-teacher">create</button>
+        </div>
+    </div>
 </div>
+
+<div id="teachers-block"></div>
 
 <script src="../js/adminPanel.js"></script>
 </body>
