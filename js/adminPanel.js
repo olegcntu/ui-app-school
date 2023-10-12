@@ -1,4 +1,3 @@
-const teacherName = document.getElementById("teacherName");
 const teachersBlock = document.getElementById("teachers-block");
 const addTeacher = document.getElementById("add-teacher")
 
@@ -9,17 +8,15 @@ const createTeacher = document.getElementById("create-teacher");
 const name = document.getElementById("name");
 const lastName = document.getElementById("last-name");
 const hourlySalary = document.getElementById("hourly-salary");
-const bodyAdminPanel = document.getElementById("body-admin-panel");
+const responseService = document.getElementById("responseService")
 
 function openModal() {
     modal.style.display = 'block';
-    // overlay.style.display = 'block';
     teachersBlock.classList.add('blur');
 }
 
 function closeModal() {
     modal.style.display = 'none';
-    // overlay.style.display = 'none';
     teachersBlock.classList.remove('blur');
 }
 
@@ -48,8 +45,20 @@ createTeacher.addEventListener('click', () => {
     fetch('http://localhost:8080/add-teacher', option)
         .then(response => response.json())
         .then(data => {
-            // console.log(data)
+             console.log(data)
+            //
+            if(data.successful === true){
+                responseService.innerHTML= data.message
+                setTimeout(()=>{
+                    responseService.innerHTML= data.message
+                    location.reload()
+                },2000)
+            }else{
+                   responseService.innerHTML= data.errors
+            }
+            // closeModal()
         })
+
 })
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -72,7 +81,6 @@ function fetchData() {
 
 
                         const teacherName = document.createElement("p");
-                        teacherName.setAttribute("id", "teacherName");
                         teacherName.innerHTML =
                             `<div class="flex">
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMA
@@ -86,7 +94,6 @@ function fetchData() {
 
 
                         const teacherLastName = document.createElement("p");
-                        teacherLastName.setAttribute("id", "teacher-last-name");
                         teacherLastName.innerHTML =
                             `<div class="flex"> 
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMA
@@ -99,7 +106,6 @@ function fetchData() {
                             </div>`;
 
                         const teacherHourlySalary = document.createElement("p");
-                        teacherHourlySalary.setAttribute("id", "teacher-hourly-salary");
                         teacherHourlySalary.innerHTML =
                             `<div class="flex"> 
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMA
@@ -113,7 +119,6 @@ function fetchData() {
                             </div>`;
 
                         const teacherStudent = document.createElement("p");
-                        teacherStudent.setAttribute("id", "teacher-student");
                         teacherStudent.innerHTML =
                             `<div class="flex">
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMA
@@ -130,7 +135,6 @@ function fetchData() {
                             </div>`;
 
                         const teacherWorkTime = document.createElement("p");
-                        teacherWorkTime.setAttribute("id", "teacher-student");
                         teacherWorkTime.innerHTML =
                             `<div class="flex">
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMA
@@ -143,11 +147,25 @@ function fetchData() {
                                 Work time: <span class="elementColor">${element.workTime}</span>; 
                             </div>`;
 
+                        const teacherEarned = document.createElement("p");
+                        teacherEarned.innerHTML=
+                            `<div class="flex">
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMA
+                                AAsTAAALEwEAmpwYAAABSklEQVR4nO3WvUoDQRSG4dc0QWOIYOUF2AS09Qq0UAtvQbCwEixNCrs0UQjkFsQUYqu2
+                                IhZGVND40whphEis/CGdysAElmXPZnY5o00+OCycHfZhZ3aZgWHkLANN4NNel/gj9CeiVnzDlwJ84Rt+F2DT95rm
+                                f73xAvAdAS/6AkeB3IAxE8AmMBPqF4HtpLMyAmwAHeAYyArjTP8kMAPXwA7QCvRuXVHzsANhTdNUxRWuKaI9YMoF
+                                nRU+orT1Zdd6YHYV0X7dAJk49FwJ2rJ/Qsn1tztTgsft8/KB3iOwBhQk/EMBLlm8HHHvQYLvPKxxsF4keM8z3JDg
+                                ec/wugRn7HT4QFvAJDE5UgbvgTEcUlVE3yJ2LTGrSugzME2CzCnBZrtMlLywUdSBfeAJ6Nox5szVFg6Dr6RII4Rf
+                                xRwG+geHwxB8mgYeBu38AnAJhBhjKVpfAAAAAElFTkSuQmCC">
+                                Earned: <span class="elementColor">${element.workTime * element.teacherHourlySalary} </span>;
+                            </div>`;
+
                         teacherBlock.appendChild(teacherName);
                         teacherBlock.appendChild(teacherLastName);
                         teacherBlock.appendChild(teacherHourlySalary);
                         teacherBlock.appendChild(teacherStudent);
                         teacherBlock.appendChild(teacherWorkTime);
+                        teacherBlock.appendChild(teacherEarned);
                         teachersBlock.appendChild(teacherBlock);
 
                     }
