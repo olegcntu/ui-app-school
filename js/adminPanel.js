@@ -46,7 +46,7 @@ createTeacher.addEventListener('click', () => {
         .then(response => response.json())
         .then(data => {
              console.log(data)
-            //
+
             if(data.successful === true){
                 responseService.innerHTML= data.message
                 setTimeout(()=>{
